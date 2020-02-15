@@ -69,6 +69,75 @@ public class TestPerson {
     }
 
     @Test
+    public void testConstructorWithNameAndAgeAndHeight() {
+        // Given
+        Integer expectedAge = 5;
+        String expectedName = "Leon";
+        Double expectedHeight = 5.8;
+
+        // When
+        Person person = new Person(expectedName, expectedAge, expectedHeight);
+
+        // Then
+        Integer actualAge = person.getAge();
+        String actualName = person.getName();
+        Double actualHeight = person.getHeight();
+
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedHeight, actualHeight);
+    }
+
+    @Test
+    public void testConstructorWithNameAndAgeAndHeightAndWeight() {
+        // Given
+        Integer expectedAge = 5;
+        String expectedName = "Leon";
+        Double expectedHeight = 5.8;
+        Integer expectedWeight = 165;
+
+        // When
+        Person person = new Person(expectedName, expectedAge, expectedHeight, expectedWeight);
+
+        // Then
+        Integer actualAge = person.getAge();
+        String actualName = person.getName();
+        Double actualHeight = person.getHeight();
+        Integer actualWeight = person.getWeight();
+
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedHeight, actualHeight);
+        Assert.assertEquals(expectedWeight, actualWeight);
+    }
+
+    @Test
+    public void testConstructorWithNameAndAgeAndHeightAndWeightAndAddress() {
+        // Given
+        Integer expectedAge = 5;
+        String expectedName = "Leon";
+        Double expectedHeight = 5.8;
+        Integer expectedWeight = 165;
+        String expectedAddress = "Delaware";
+
+        // When
+        Person person = new Person(expectedName, expectedAge, expectedHeight, expectedWeight, expectedAddress);
+
+        // Then
+        Integer actualAge = person.getAge();
+        String actualName = person.getName();
+        Double actualHeight = person.getHeight();
+        Integer actualWeight = person.getWeight();
+        String actualAddress = person.getAddress();
+
+        Assert.assertEquals(expectedAge, actualAge);
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedHeight, actualHeight);
+        Assert.assertEquals(expectedWeight, actualWeight);
+        Assert.assertEquals(expectedAddress, actualAddress);
+    }
+
+    @Test
     public void testSetName() {
         // Given
         Person person = new Person();
@@ -93,6 +162,48 @@ public class TestPerson {
 
         // Then
         Integer actual = person.getAge();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHeight() {
+        // Given
+        Person person = new Person();
+        Double expected = 5.8;
+
+        // When
+        person.setHeight(expected);
+
+        // Then
+        Double actual = person.getHeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetWeight() {
+        // Given
+        Person person = new Person();
+        Integer expected = 165;
+
+        // When
+        person.setWeight(expected);
+
+        // Then
+        Integer actual = person.getWeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetAddress() {
+        // Given
+        Person person = new Person();
+        String expected = "Delaware";
+
+        // When
+        person.setAddress(expected);
+
+        // Then
+        String actual = person.getAddress();
         Assert.assertEquals(expected, actual);
     }
 }
